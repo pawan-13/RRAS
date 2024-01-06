@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Home = () => {
+
+  const[color,setColor] = useState("black");
+
+  const handleClick = () => {
+     setColor("red");
+  }
+
   return (
     <div className="relative w-full bg-white mt-2">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
@@ -33,7 +40,8 @@ const Home = () => {
             <div>
               <button
                 type="button"
-                className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                onClick={handleClick}
+                className="rounded-md px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black" style={{backgroundColor:color}}
               >
                 Subscribe
               </button>
